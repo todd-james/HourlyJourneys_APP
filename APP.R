@@ -11,7 +11,7 @@ library(shinydashboard)
 
 #########################################################################################################################################################
 
-AvSixMonHourlyJourneyCount <- read.csv("AvSixMonHourlyJourneyCount.csv")
+AvSixMonHourlyJourneyCount <- read.csv("AvSixMonHourlyJourneyCount_TZ.csv")
 Names <- unique(AvSixMonHourlyJourneyCount$city)
 
 #########################################################################################################################################################
