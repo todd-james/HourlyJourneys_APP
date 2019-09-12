@@ -24,13 +24,13 @@ ui <- fluidPage(titlePanel(title = "Bike Sharing System Daily Travel Patterns"),
 server <- function(input, output){
   output$Weekday <- renderPlot({
     ggplot(data = subset(AvSixMonHourlyJourneyCount, city == input$City & Weekday == 1), aes(x = tzadj_hour, y = Journeys)) + 
-      geom_line() + 
+      geom_bar() + 
       scale_x_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23)) +
       labs(x = "Hour of the Day", y = "No. of Journeys", title = "Weekday")}, height = 700, width = 1200)
     
   output$Weekend <- renderPlot({
     ggplot(data = subset(AvSixMonHourlyJourneyCount, city == input$City & Weekday == 0), aes(x = tzadj_hour, y = Journeys)) + 
-      geom_line() + 
+      geom_bar() + 
       scale_x_continuous(breaks = c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23)) +
       labs(x = "Hour of the Day", y = "No. of Journeys", title = "Weekend")}, height = 700, width = 1200)
   
